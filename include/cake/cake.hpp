@@ -6,7 +6,6 @@ struct cake
 {
 	std::string recipe;
 
-
 	cake();
 	cake(std::string recipe);
 

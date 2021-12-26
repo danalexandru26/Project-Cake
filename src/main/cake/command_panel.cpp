@@ -33,7 +33,10 @@ void command_panel::select_product(std::string recipe)
 	auto it = menu.begin();
 	auto c = std::find_if(menu.begin(), menu.end(), [&](const recipe_cake& c) {return c.recipe == recipe;});
 
-	taker.take_command(*c);
+	if (c != menu.end())
+	{
+		taker.take_command(*c);
+	}
 }
 
 void command_panel::carousel_products()
