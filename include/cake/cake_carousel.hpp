@@ -21,3 +21,4 @@ private:
 	std::size_t low_limit;
 	std::vector<cake> storage;
 };
+

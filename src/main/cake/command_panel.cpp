@@ -24,14 +24,12 @@ void command_panel::show_products()
 	for (auto& recipe : menu)
 	{
 		std::cout << "Name: " << recipe.get_recipe() << ' ' << "Time: " << recipe.get_time() << '\n';
-
 	}
 }
 
 void command_panel::select_product(std::string recipe)
 {
-	auto it = menu.begin();
-	auto c = std::find_if(menu.begin(), menu.end(), [&](const recipe_cake& c) {return c.recipe == recipe;});
+	auto c = std::find_if(menu.begin(), menu.end(), [&](const recipe_cake& c) {return c.recipe == recipe; });
 
 	if (c != menu.end())
 	{

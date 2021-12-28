@@ -10,7 +10,6 @@ public:
 	void select_product(std::string recipe);
 	void carousel_products();
 
-
 private:
 	std::vector<recipe_cake> menu;
 	command_taker taker;

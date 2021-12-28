@@ -22,6 +22,7 @@ std::vector<cake> command_taker::take_command(recipe_cake recipe, std::size_t  c
 		order.push_back(maker.take_command(recipe));
 		--count;
 	}
+
 	return order;
 }
 

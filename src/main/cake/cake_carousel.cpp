@@ -43,7 +43,6 @@ cake carousel::get_cake(std::string recipe)
 			return cake(recipe);
 		}
 	}
-
 	return cake();
 }
 
