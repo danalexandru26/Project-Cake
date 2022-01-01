@@ -9,7 +9,7 @@ class carousel
 public:
 	friend class command_taker;
 
-	carousel(std::string path = "cakes.txt");
+	carousel();
 	
 	bool add_cake(cake& recipe);
 	cake get_cake(std::string recipe);

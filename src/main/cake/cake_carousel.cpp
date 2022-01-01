@@ -1,10 +1,10 @@
 #include<cake/cake_carousel.hpp>
 
 
-carousel::carousel(std::string path)
+carousel::carousel()
 	:low_limit{3}, max_capacity{12}
 {
-	std::fstream file(path);
+	std::fstream file("cakes.txt");
 	std::string line;
 
 	while (std::getline(file, line))

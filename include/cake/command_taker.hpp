@@ -14,7 +14,7 @@ public:
 	std::vector<cake> get_carousel_cakes();
 	
 	void check_carousel();
-	void refill_carousel(std::string path = "cakes.txt");
+	void refill_carousel();
 
 private:
 	recipe_cake carousel_recipe;
