@@ -61,9 +61,9 @@ int main()
 			}
 			std::cout << '\n';
 		}
+
 		std::cout << "\n0 - Check Menu  1 - Check Carousel  2 - Close Store\n";
 		std::cin >> selection;
-
 		switch (selection)
 		{
 		case 0:
