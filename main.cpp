@@ -2,7 +2,8 @@
 #include<random>
 #include<cake/command_panel.hpp>
 
-std::string determine(std::string const& path = "menu.txt");
+std::string determine();
+void timer(std::size_t index);
 
 int main()
 {
@@ -10,18 +11,17 @@ int main()
 
 	while (true)
 	{
-		std::cout << "\nMenu products\n";
-		panel.show_products();
-		std::cout << "\nCarousel products\n";
-		panel.carousel_products();
-		std::string result = determine();
-		std::cout << "\nCustomer picked : " << result <<'\n';
+		for (std::size_t i = 0; i < 10; ++i)
+		{
+			timer(i);
+			std::cout << determine() << '\n';
+		}
 	}
 
 	return 0;
 }
 
-std::string determine(std::string const& path)
+std::string determine()
 {
 	std::random_device seed;
 	std::mt19937 gen(seed());
@@ -29,7 +29,7 @@ std::string determine(std::string const& path)
 	std::string line;
 	std::string result;
 
-	std::ifstream file(path);
+	std::ifstream file("menu.txt");
 
 	for (std::size_t i = 0; std::getline(file, line); ++i)
 	{
@@ -40,4 +40,15 @@ std::string determine(std::string const& path)
 		}
 	}
 	return result;
+}
+
+void timer(std::size_t index)
+{
+	using namespace std::this_thread;
+	using namespace std::chrono;
+	using namespace std::chrono_literals;
+	using std::chrono::system_clock;
+
+	std::cout << "Customer " << index << " picked ";
+	sleep_until(system_clock::now() + 0.5s);
 }

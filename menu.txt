@@ -1,2 +1,13 @@
-Triamisu 5
+Triamisu 2
 Cheesecake 5
+ApplePie 1
+BlueberryPie 3
+Cremes 1
+Dobos 2
+BlackForest 6
+WallnutPie 3
+CarrotPie 2
+ChocolateCake 3
+LemonPie 4
+ChocolateMousse 3
+VanillaMousse 3
