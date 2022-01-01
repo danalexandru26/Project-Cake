@@ -39,6 +39,8 @@ void command_panel::select_product(std::string recipe)
 
 void command_panel::carousel_products()
 {
+	taker.check_carousel();
+
 	auto list = taker.get_carousel_cakes();
 
 	for (auto& cake : list)

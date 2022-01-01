@@ -26,16 +26,6 @@ std::vector<cake> command_taker::take_command(recipe_cake recipe, std::size_t  c
 	return order;
 }
 
-std::vector<cake> command_taker::get_carousel_cakes()
-{
-	return cake_carousel.storage;
-}
-
-bool command_taker::check_carousel()
-{
-	return cake_carousel.current_capacity();
-}
-
 void command_taker::refill_carousel(std::string path)
 {
 	if (cake_carousel.current_capacity() == cake_carousel.low_limit)
@@ -45,16 +35,23 @@ void command_taker::refill_carousel(std::string path)
 
 		while (std::getline(file, line))
 		{
-			std::istringstream stream(line);
-			std::string recipe;
-
-			if (stream >> recipe)
+			if (!cake_carousel.add_cake(maker.take_command(recipe_cake(line, 5))))
 			{
-				if (!cake_carousel.add_cake(maker.take_command(recipe_cake(recipe, 5))))
-				{
-					return;
-				}
+				return;
 			}
 		}
+	}
+}
+
+inline std::vector<cake> command_taker::get_carousel_cakes()
+{
+	return cake_carousel.storage;
+}
+
+inline void command_taker::check_carousel()
+{
+	if (cake_carousel.current_capacity() == cake_carousel.low_limit)
+	{
+		refill_carousel();
 	}
 }

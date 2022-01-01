@@ -12,9 +12,9 @@ carousel::carousel(std::string path)
 		std::istringstream stream(line);
 		std::string recipe;
 
-		if (stream >> recipe && storage.size() < max_capacity)
+		if (storage.size() < max_capacity)
 		{
-			storage.push_back(cake(recipe));
+			storage.push_back(cake(line));
 		}
 		else if (storage.size() >= max_capacity)
 		{

@@ -13,7 +13,7 @@ public:
 
 	std::vector<cake> get_carousel_cakes();
 	
-	bool check_carousel();
+	void check_carousel();
 	void refill_carousel(std::string path = "cakes.txt");
 
 private:

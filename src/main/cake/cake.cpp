@@ -4,11 +4,11 @@ cake::cake()
 	:recipe{ "cookie dough" }
 {}
 
-cake::cake(std::string recipe)
+inline cake::cake(std::string recipe)
 	: recipe{ recipe }
 {}
 
-std::string cake::get_recipe()
+inline std::string cake::get_recipe()
 {
 	return recipe;
 }
