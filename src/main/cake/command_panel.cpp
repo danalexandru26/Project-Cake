@@ -61,7 +61,6 @@ void command_panel::carousel_products()
 
 	for (auto& cake : list)
 	{
-		std::cout << cake.get_recipe() << ' ';
+		std::cout << cake.get_recipe() << '\n';
 	}
-	std::cout << '\n';
 }
