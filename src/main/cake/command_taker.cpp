@@ -17,9 +17,10 @@ cake command_taker::take_command(recipe_cake recipe)
 std::vector<cake> command_taker::take_command(recipe_cake recipe, std::size_t  count)
 {
 	std::vector<cake> order;
+	cake ordered_cake = maker.take_command(recipe);
 	while (count)
 	{
-		order.push_back(maker.take_command(recipe));
+		order.push_back(ordered_cake);
 		--count;
 	}
 
