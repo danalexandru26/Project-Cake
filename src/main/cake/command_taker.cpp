@@ -23,7 +23,6 @@ std::vector<cake> command_taker::take_command(recipe_cake recipe, std::size_t  c
 		order.push_back(ordered_cake);
 		--count;
 	}
-
 	return order;
 }
 

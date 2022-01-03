@@ -25,12 +25,15 @@ bool carousel::add_cake(cake& recipe)
 
 cake carousel::get_cake(std::string recipe)
 {
-	for (auto it = storage.begin(); it != storage.end(); ++it)
+	if (storage.size() > low_limit)
 	{
-		if (it->get_recipe() == recipe)
+		for (auto it = storage.begin(); it != storage.end(); ++it)
 		{
-			it = storage.erase(it);
-			return cake(recipe);
+			if (it->get_recipe() == recipe)
+			{
+				it = storage.erase(it);
+				return cake(recipe);
+			}
 		}
 	}
 	return cake();
