@@ -7,16 +7,9 @@ carousel::carousel()
 	std::fstream file("cakes.txt");
 	std::string line;
 
-	while (std::getline(file, line))
+	while (std::getline(file, line) && storage.size() < max_capacity)
 	{
-		if (storage.size() < max_capacity)
-		{
 			storage.push_back(cake(line));
-		}
-		else if (storage.size() >= max_capacity)
-		{
-			break;
-		}
 	}
 }
 
