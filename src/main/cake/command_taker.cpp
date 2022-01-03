@@ -29,8 +29,6 @@ std::vector<cake> command_taker::take_command(recipe_cake recipe, std::size_t  c
 
 void command_taker::refill_carousel()
 {
-	if (cake_carousel.current_capacity() == cake_carousel.low_limit)
-	{
 		std::fstream file("cakes.txt");
 		std::string line;
 
@@ -41,7 +39,6 @@ void command_taker::refill_carousel()
 				return;
 			}
 		}
-	}
 }
 
 std::vector<cake> command_taker::get_carousel_cakes()

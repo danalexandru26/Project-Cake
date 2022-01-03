@@ -9,9 +9,6 @@ carousel::carousel()
 
 	while (std::getline(file, line))
 	{
-		std::istringstream stream(line);
-		std::string recipe;
-
 		if (storage.size() < max_capacity)
 		{
 			storage.push_back(cake(line));
