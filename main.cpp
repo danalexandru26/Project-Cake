@@ -94,14 +94,11 @@ void  determine(std::string& cake, std::size_t& quantity)
 
 	for (std::size_t i = 0; std::getline(file, line); ++i)
 	{
-		std::istringstream buffer(line);
-		buffer >> recipe;
-
 		std::uniform_int_distribution<> dist(0, i);
 		
 		if (dist(gen) < 1)
 		{
-			cake = recipe;
+			cake = line;
 		}
 	}
 
